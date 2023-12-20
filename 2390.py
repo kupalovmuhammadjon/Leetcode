@@ -7,7 +7,7 @@ class Solution:
             if char == '*':
                 if result:
                     result.pop()  
-            else:
+            else:   
                 result.append(char)
 
         return "".join(result)
