@@ -10,13 +10,11 @@ for i in range(len(tpls)):
     
     for j in range(len(tpls)):
         
-        if tpls[i][1] > tpls[j][1]:
+        if tpls[i][1] < tpls[j][1]:
             tpls[i], tpls[j] = tpls[j], tpls[i]
-        if tpls[i][1] == tpls[j][1] and tpls[i][0] > tpls[j][0]:
+        if tpls[i][1] == tpls[j][1] and tpls[i][0] < tpls[j][0]:
             tpls[i], tpls[j] = tpls[j], tpls[i]
             
-
-tpls.reverse()
 
 for i in tpls:
     res.append(i[0])
