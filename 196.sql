@@ -1,0 +1,1 @@
+DELETE t2 from Person as t1 inner join Person as t2 on t1.email = t2.email and t1.id < t2.id
