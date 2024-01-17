@@ -1,0 +1,1 @@
+select t2.firstname, t2.lastname, t1.city, t1.state from Address as t1 right join Person as t2 on t1.personId = t2.personId
