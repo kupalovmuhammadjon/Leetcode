@@ -1,2 +1,0 @@
-                print(j)
-                print(i)
