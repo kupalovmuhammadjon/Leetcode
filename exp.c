@@ -4,7 +4,7 @@ int main() {
 
     char name[] = "Muhamadjon";
 
-    printf(name, "\n");
+    printf("\n", name);
 
     return 0;
 }
