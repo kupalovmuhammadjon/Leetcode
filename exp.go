@@ -25,3 +25,4 @@ func main() {
 	result := countTestedDevices(batteryPercentages)
 	fmt.Println("Result:", result)
 }
+	
