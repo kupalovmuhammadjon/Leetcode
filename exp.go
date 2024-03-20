@@ -5,11 +5,11 @@ import (
 )
 
 func main() {
-	ls := []int{2, 1}
+	ls := "12"
 	fmt.Println(ls)
-	ls = ls[:len(ls)-1]
+	ls = ls[1:]
 	fmt.Println(ls)
-	ls = ls[:len(ls)-2]
+	ls = ls[1:]
 	fmt.Println(ls)
 
 }
