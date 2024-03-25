@@ -22,10 +22,10 @@ func longestZigZag(root *TreeNode) int {
 
 		mx = max(mx, max(left, right))
 
-		if cur.Right != nil {
+		if cur.Right != nil && !(cur.Right.Right == nil && cur.Right.Left == nil) {
 			stack = append(stack, cur.Right)
 		}
-		if cur.Left != nil {
+		if cur.Left != nil && !(cur.Left.Right == nil && cur.Left.Left == nil) {
 			stack = append(stack, cur.Left)
 		}
 
