@@ -6,7 +6,7 @@ import (
 
 func main() {
 	ls := "123456"
-	fmt.Println(ls[:len(ls)-1])
+	fmt.Println(ls[1:])
 	ls = ls[1:2]
 
 }
