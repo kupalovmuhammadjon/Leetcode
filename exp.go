@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	ls := "123456"
-	fmt.Println(ls[1:])
-	ls = ls[1:2]
+	ls := "12"
+	ls = ls[:1] + ls[2:]
+	fmt.Println(ls)
 
 }
