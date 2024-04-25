@@ -1,0 +1,102 @@
+Rune va byte bir qarashda farqini sezish qiyin bo'lgan data typelardan biri hisoblanadi. Nimaga degan
+savol uyg'onadi?
+Avval byte va rune nimaligini ko'rib chiqamiz. Qisqasi byte va rune ozida bitta belgi saqlay oladi
+(xuddi char kabi agar c tilini bilsangiz). 
+Demak rune va bytelar bilan bir ishlab ko'rsak
+var b byte = 'a'
+var r rune = 'a'
+rune va byte bittalik qo'shtirnoqlar bilan yoziladi va faqat bitta belgi oladi. Ikkitalik qo'shtirnoqlar
+string uchun ishlatiladi va byte yoki runega qo'llanilsa xatolik beradi
+var b byte = 'a'
+var r rune = 'a'
+fmt.Println(b)
+fmt.Println(r)
+Output: 97
+Output: 97
+Bu yerda sizda tushunmovchilik bo'lishi mumkin nima chiqaryapti bu rune va byte o'zida decimal qiymat
+saqlaydi. Siz ko'rayotgan sonlar ham a harfining ascii tabledagi decimal qiymati. Agar siz ularni harf
+ko'rinishida ko'rmoqchi bo'lsangiz stringga o'tqazishingiz(convert) yetarli. Byte, rune bir-biriga va stringga
+o'tqazishda umuman muammo yo'q.
+var b byte  = 'a'
+var r rune = 'a'
+fmt.Println(string(b))
+fmt.Println(string(r))
+Output: a
+Output: a
+Ko'rib turganingizday stringga o'tqazib bemalol harf ko'rinishida ekranga chop qila olamiz.
+
+Endi rune va byte ni string bilan ishlatib ko'rsak.
+var s string = "Hello"
+fmt.Println(s[0])
+Output: 72
+
+Bu yerda s[0] chisini avtomat ravishda byte sifatida olib ketadi.
+
+fmt.Println(rune(s[0]))
+Output: 72
+
+Ushbu holatda ham hech qanday ozgarish sezmaymiz. Rune va byte ni stringga o'tkazsa ham bo'ladi.
+Conversion quyidagicha bo'ladi.
+
+fmt.Println(string(rune(s[0])))
+fmt.Println(stirng(s[0]))
+Output: H
+Output: H
+
+Demak bu yerda ham bir xil resultat olasiz.Butun bir stringni byte yoki runega o'tqazsak bo'ladimi ha
+bo'ladi byte va rune slice qilib stringni bo'laklarga bolib saqlay olamiz 
+
+var s string = "Hello"
+sInBytes := []byte(s)
+sInRunes := []rune(s)
+fmt.Println(sInBytes)
+fmt.Println(sInRunes)
+Output:
+[72 101 108 108 111]
+[72 101 108 108 111]
+
+Bir xil natija olamiz va ushbu slice larni stringga qayta convert qilsa bo'ladi.
+
+fmt.Println(string(sInBytes))
+fmt.Println(string(sInRunes))
+Output:
+Hello
+Hello
+
+Albatta bu nuqtada siz bular orasida umuman farq yoq deb o'ylashingiz mumkin.Lekin shoshmaslikni maslahat 
+beraman. Sizga aytmagan ya'na bitta narsa bor ushbu data typelar qacha xotira egallay oladi.
+byte  0 to 255 xuddi uint8 kabi yani manashuncha decimal qiymat olishi mumkin yani ascii tabledagi 
+common belgilarni ozida saqlay oladi.
+rune  int32 qiymat olishi mumkin.Bu degani xohlagan bitta belgini ozida saqlay oladi.
+
+Aha endi farqni ko'rishni boshladik. Rune ko'proq joy olarkan lekin menga nimaga kerak bu deyish mumkin.
+To'g'ri savol bitta belgi bytega sig'may qo'lishi mumkin va hozir shunday holatlarni ko'rib chiqamiz.
+
+var b byte  = 'й'
+
+Bu holatda kod ishlamaydi va error qaytaradi chunki rus tilidagi й harfining decimal qiymati 1081
+byte esa 255 gacha qiymat oladi holos va bu bizga yetarli emas. Bunday vaziyatlarda runeni bemalol 
+ishlatishimiz mumkin va hech qanday muammo bo'lmaydi xitoycha, ruscha, yaponchami farqi yoq rune xizmatingizda har doim.
+
+var s string = "你好世界"
+sInBytes := []byte(s)
+sInRunes := []rune(s)
+fmt.Println(sInBytes)
+fmt.Println(sInRunes)
+Output:
+[228 189 160 229 165 189 228 184 150 231 149 140]
+[20320 22909 19990 30028]
+
+Ko'rib turganingizday byte bitta belgini ham o'zi saqlay oladigan darajalarga bo'lib tashladi runeda esa
+hammasi joyida.
+
+fmt.Println(string(sInBytes))
+fmt.Println(string(sInRunes))
+Output:
+你好世界
+你好世界
+
+Sliceni yana stringga convert qilsak muammo yoq ikkalasida ham byte belgilarni bo'lib tashlagan 
+bo'lsa ham bu yerda muammo bo'lmaydi.
+
+Maqola foydali va tushunarli bo'ldi degan umiddaman va shu yergacha o'qiganingiz uchun rahmat.
