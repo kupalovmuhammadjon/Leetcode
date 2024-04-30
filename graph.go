@@ -2,17 +2,17 @@ package main
 
 import "fmt"
 
-type LinkedList struct {
-	val  string
-	next *LinkedList
-}
+// type LinkedList struct {
+// 	val  string
+// 	next *LinkedList
+// }
 
-type Queue struct {
-	head      *LinkedList
-	connector *LinkedList
-	tail      *LinkedList
-	len       int
-}
+// type Queue struct {
+// 	head      *LinkedList
+// 	connector *LinkedList
+// 	tail      *LinkedList
+// 	len       int
+// }
 
 func main() {
 	graph := map[string][]string{}
