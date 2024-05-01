@@ -46,19 +46,18 @@ func max(arr []int, mx int) int {
 	return max(arr[:len(arr)-1], mx)
 }
 
-func binarySearch(arr []int, l, r, tar, s int) int {
+func binarySearch(arr []int, l, r, tar int) int {
 	if l > r || len(arr) < r {
 		return -1
 	}
 	mid := (l + r) / 2
-	fmt.Println(arr[mid])
 	guess := arr[mid]
 	if guess == tar {
-		return s
+		return mid
 	} else if guess < tar {
 		l = mid + 1
 	} else {
 		r = mid - 1
 	}
-	return binarySearch(arr, l, r, tar, s+1)
+	return binarySearch(arr, l, r, tar)
 }

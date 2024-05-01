@@ -5,27 +5,18 @@ import (
 )
 
 func main() {
-	// birthYear := 2005
-	// currentYear := 2024
-	// fmt.Println(currentYear - birthYear)
-	// var b byte = 'с'
-	var r rune = 'й'
-	fmt.Println(r)
-	// s := "Helo"
-	// for i, _ := range s{
-	// 	fmt.Println(s[i])
-	// }
-	// var s string = "Hello"
-	// sInBytes := []byte(s)
-	// sInRunes := []rune(s)
-	// fmt.Println(string(sInBytes))
-	// fmt.Println(string(sInRunes))
+	s := "Salom"
+	a := 3
+	makeCub(&a)
+	changeString(&s)
+	fmt.Println(a)
+	fmt.Println(s)
+	
+}
+func makeCub(a *int){
+	*a = *a * *a * *a
+}
 
-	var s string = "你好世界"
-sInBytes := []byte(s)
-sInRunes := []rune(s)
-fmt.Println(sInBytes)
-fmt.Println(string(sInBytes))
-fmt.Println(string(sInRunes))
-
+func changeString(s *string){
+	*s = *s + *s + *s
 }
