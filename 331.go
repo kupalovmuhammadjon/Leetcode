@@ -1,5 +1,5 @@
 func isValidSerialization(preorder string) bool {
-    if preorder[0] == '#'{
+    if preorder == "#"{
         return true
     }
     nodes := strings.Split(preorder, ",")
