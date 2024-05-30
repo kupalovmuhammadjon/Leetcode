@@ -9,3 +9,5 @@ where
         select employee_id
         from Employees
     )
+order by
+    employee_id
